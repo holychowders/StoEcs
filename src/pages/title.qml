@@ -1,50 +1,60 @@
-import QtQuick.Controls 2.15
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Layouts 1.1
+import QtQuick.Controls 2.15
 
 
 Window {
-    id: main_window
+    id: titleWindow
     visible: true
-    title: "Star Trek Online Control System"
+
+    title: 'Star Trek Online Control System'
+
+    color: '#000000'
+
+    width: Window.width
+    height: Window.height
 
 
-    Row {
-        id: weapons_grid
+    Label {
+        id: header
         visible: true
 
-        spacing: 20
+        text: 'Star Trek Online Control System'
+        color: '#ff0000'
+        font.pointSize: (1/40) * Window.width
+
+        y: (1/5) * Window.height
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+
+    Button {
+        id: startButton
+        visible: true
+
+        onPressed: titlePage.onStartButtonPressed()
+
+        width: (1/10) * Window.width
+        height: (1/10) * Window.height
         anchors.centerIn: parent
 
+        Text {
+            text: 'START'
+            color: '#000000'
+            font.pointSize: (1/80) * Window.width
+            anchors.centerIn: parent
+        }
 
-        Button {
-            id: control
-            text: "Fire"
 
-            visible: true
+        background: Rectangle {
+//            color: titlePage.startButtonColor
+            color: '#cc0000'
 
-            //width: 200
-            //height: 200
-
-            contentItem: Text {
-                text: control.text
-                font: control.font
-                opacity: enabled ? 1.0 : 0.3
-                color: control.down ? "#17a81a" : "#21be2b"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-
-            background: Rectangle {
-                implicitWidth: 100
-                implicitHeight: 40
-                opacity: enabled ? 1 : 0.3
-                border.color: control.down ? "#17a81a" : "#21be2b"
-                border.width: 1
-                radius: 2
-            }
+            radius: 5
+            border.width: 3
         }
     }
 }

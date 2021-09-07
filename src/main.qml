@@ -10,7 +10,7 @@ Window {
 
     title: 'Star Trek Online Control System'
 
-    color: 'black'
+    color: '#000000'
 
     width: Window.width
     height: Window.height
@@ -24,7 +24,7 @@ Window {
         color: '#ff0000'
         font.pointSize: (1/40) * Window.width
 
-        y: 20
+        y: (1/5) * Window.height
 
         anchors.horizontalCenter: parent.horizontalCenter
         horizontalAlignment: Text.AlignHCenter

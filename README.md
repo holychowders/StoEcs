@@ -1,4 +1,4 @@
-# StoEcs
+# StoEcs -- Star Trek Online Embedded Control System
 StoEcs is an independent project to create an embedded GUI control system for the video game Star Trek Online
 
 

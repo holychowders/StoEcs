@@ -4,44 +4,49 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.1
 
 
-Window {
-    id: tacticalWindow
-    visible: true
-    title: "Star Trek Online Control System"
+Rectangle {
+    id: tacticalPageContainer
+
+    color: '#000000'
+
+    width: Window.width
+    height: Window.height
 
 
     Row {
         id: weaponsGrid
         visible: true
 
-        spacing: 20
+//        spacing: 20
         anchors.centerIn: parent
 
 
         Button {
             id: fireButton
-            text: "Fire"
-
             visible: true
 
-            //width: 200
-            //height: 200
+            width: (1/10) * tacticalPageContainer.width
+            height: (1/10) * tacticalPageContainer.height
 
             contentItem: Text {
-                text: control.text
-                font: control.font
-                opacity: enabled ? 1.0 : 0.3
-                color: control.down ? "#17a81a" : "#21be2b"
+                text: 'FIRE'
+
+                font.bold: true
+                font.pointSize: (1/60) * tacticalPageContainer.width
+
+                color: '#000000'
+
+                // Why can't I do anchors.centerIn: fireButton
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
             }
 
             background: Rectangle {
+                color: fireButton.down ? "#ffffff" : "#ff0000"
+
                 implicitWidth: 100
                 implicitHeight: 40
-                opacity: enabled ? 1 : 0.3
-                border.color: control.down ? "#17a81a" : "#21be2b"
+
                 border.width: 1
                 radius: 2
             }

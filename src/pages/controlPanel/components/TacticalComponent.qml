@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.1
 
 
 Rectangle {
-    id: tacticalPageContainer
+    id: tacticalComponentContainer
 
     color: '#000000'
 
@@ -25,14 +25,14 @@ Rectangle {
             id: fireButton
             visible: true
 
-            width: (1/10) * tacticalPageContainer.width
-            height: (1/10) * tacticalPageContainer.height
+            width: (1/10) * tacticalComponentContainer.width
+            height: (1/10) * tacticalComponentContainer.height
 
             contentItem: Text {
                 text: 'FIRE'
 
                 font.bold: true
-                font.pointSize: (1/60) * tacticalPageContainer.width
+                font.pointSize: (1/60) * tacticalComponentContainer.width
 
                 color: '#000000'
 

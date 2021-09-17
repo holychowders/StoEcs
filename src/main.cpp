@@ -1,4 +1,4 @@
-#include "include/pages/title.h"
+#include "include/pages/title/title.h"
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>

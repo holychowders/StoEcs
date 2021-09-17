@@ -1,7 +1,7 @@
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 
-import "pages"
+import "pages/title"
 
 
 ApplicationWindow {

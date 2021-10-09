@@ -1,7 +1,7 @@
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 
-import "pages/title"
+import "pages/controlPanel/components/"
 
 
 ApplicationWindow {
@@ -16,7 +16,7 @@ ApplicationWindow {
     height: Window.height
 
 
-    TitlePage {
+    TacticalComponent {
         visible: true
 
         // Note: Having a fixed height such as this means it will not scale when the app window is resized.

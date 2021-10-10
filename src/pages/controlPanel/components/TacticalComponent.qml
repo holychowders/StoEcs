@@ -4,52 +4,52 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.1
 
 
-Rectangle {
-    id: tacticalComponentContainer
-
-    color: '#000000'
+Item {
+    id: tacticalComponent_qml
 
     width: Window.width
     height: Window.height
 
 
-    Row {
-        id: weaponsGrid
-        visible: true
+    Rectangle {
+        id: componentBackground_qml
 
-//        spacing: 20
-        anchors.centerIn: parent
+        anchors.fill: tacticalComponent_qml
+
+        color: '#000000'
+    }
+
+
+    Row {
+        id: weaponsControl_qml
+
+        anchors.centerIn: tacticalComponent_qml
+        //        spacing: 20
 
 
         Button {
-            id: fireButton
-            visible: true
+            id: fireButton_qml
 
-            width: (1/10) * tacticalComponentContainer.width
-            height: (1/10) * tacticalComponentContainer.height
+            width: (1/10) * Window.width
+            height: (1/10) * Window.height
 
-            contentItem: Text {
-                text: 'FIRE'
-
-                font.bold: true
-                font.pointSize: (1/60) * tacticalComponentContainer.width
-
-                color: '#000000'
-
-                // Why can't I do anchors.centerIn: fireButton
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-            }
+            hoverEnabled: false
 
             background: Rectangle {
-                color: fireButton.down ? "#ffffff" : "#ff0000"
-
-                implicitWidth: 100
-                implicitHeight: 40
-
-                border.width: 1
                 radius: 2
+
+                color: fireButton_qml.down ? '#ffffff' : '#ff0000'
+            }
+
+            Text {
+                anchors.centerIn: fireButton_qml
+
+                font.pointSize: (1/60) * Window.width
+                font.bold: true
+
+                text: 'FIRE'
             }
         }
     }
 }
+

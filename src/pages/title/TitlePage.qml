@@ -4,61 +4,64 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.15
 
 
-Rectangle {
-    id: titlePageContainer
-
-    color: '#000000'
+Item {
+    id: titlePage_qml
 
     width: Window.width
     height: Window.height
 
 
-    Label {
-        text: 'Star Trek Online Control System'
-        id: header
-        visible: true
+    Rectangle {
+        id: pageBackground_qml
 
-        font.pointSize: (1/40) * titlePageContainer.width
+        anchors.fill: titlePage_qml
+
+        color: '#000000'
+    }
+
+
+    Label {
+        id: header_qml
+
+        anchors.horizontalCenter: titlePage_qml.horizontalCenter
+
+        y: (1/5) * titlePage_qml.height
+
+        font.pointSize: (1/40) * titlePage_qml.width
+
+        text: 'Star Trek Online Control System'
 
         color: '#ff0000'
-
-        y: (1/5) * titlePageContainer.height
-
-        anchors.horizontalCenter: titlePageContainer.horizontalCenter
     }
 
 
     Button {
-        id: startButton
-        visible: true
+        id: startButton_qml
+
+        anchors.centerIn: titlePage_qml
+
+        width: (1/10) * titlePage_qml.width
+        height: (1/10) * titlePage_qml.height
+
+        hoverEnabled: false
 
         onPressed: titlePage.onStartButtonPressed()
 
-        width: (1/10) * titlePageContainer.width
-        height: (1/10) * titlePageContainer.height
+        background: Rectangle {
+            radius: 2
 
-        anchors.centerIn: titlePageContainer
-
-        Text {
-            text: 'START'
-
-            font.bold: true
-            font.pointSize: (1/60) * titlePageContainer.width
-
-            color: '#000000'
-
-            anchors.centerIn: startButton
+            color: startButton_qml.down ? '#ffffff' : '#ff0000'
         }
 
-        background: Rectangle {
-//            color: titlePageModel.startButtonColor
-            color: startButton.down ? "#ffffff" : "#ff0000"
+        Text {
+            anchors.centerIn: startButton_qml
 
-            implicitWidth: 100
-            implicitHeight: 40
+            font.pointSize: (1/60) * titlePage_qml.width
+            font.bold: true
 
-            border.width: 1
-            radius: 2
+            text: 'START'
+
+            color: '#000000'
         }
     }
 }

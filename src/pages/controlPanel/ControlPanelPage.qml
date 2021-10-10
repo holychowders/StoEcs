@@ -1,11 +1,14 @@
 import QtQuick 2.0
 
-import "components"
+import 'components'
 
 
-Rectangle {
-    id: controlPanelPageContainer
+Item {
+    id: controlPanelPage_qml
 
-    TacticalComponent {
+    Rectangle {
+
+        TacticalComponent {
+        }
     }
 }

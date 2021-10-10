@@ -19,6 +19,6 @@ ApplicationWindow {
     color: '#aaaaaa'
 
 
-    TitlePage {
+    TacticalComponent {
     }
 }

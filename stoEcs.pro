@@ -8,10 +8,12 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 
 SOURCES += \
         src/main.cpp \
+        src/pages/controlPanel/components/tactical.cpp \
         src/pages/title/title.cpp
 
 HEADERS += \
-        include/pages/title/title.h
+        include/pages/title/title.h \
+        include/pages/controlPanel/components/tactical.h
 
 RESOURCES += qml.qrc
 

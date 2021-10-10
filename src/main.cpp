@@ -1,4 +1,5 @@
 #include "include/pages/title/title.h"
+#include "include/pages/controlPanel/components/tactical.h"
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -17,8 +18,6 @@ int main(int argc, char *argv[])
     QQmlContext *rootContext = engine.rootContext();
 
     const QUrl mainWindowUrl(QStringLiteral("qrc:/src/main.qml"));
-    TitlePage titlePage;
-
 
     // Create main window and connect it to application
     QObject::connect
@@ -33,7 +32,14 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection
     );
     engine.load(mainWindowUrl);
+
+
+    TitlePage titlePage;
+    TacticalComponent tacticalComponent;
+
     rootContext->setContextProperty("titlePage", &titlePage);
+    rootContext->setContextProperty("tacticalComponent", &tacticalComponent);
+
 
     return app.exec();
 }

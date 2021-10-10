@@ -35,6 +35,8 @@ Item {
 
             hoverEnabled: false
 
+            onPressed: tacticalComponent.onFireButtonPressed()
+
             background: Rectangle {
                 radius: 2
 

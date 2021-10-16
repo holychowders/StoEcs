@@ -1,5 +1,4 @@
-#ifndef TACTICAL_H
-#define TACTICAL_H
+#pragma once
 
 #include <QObject>
 
@@ -15,5 +14,3 @@ class TacticalComponent: public QObject
         public slots:
             void onFireButtonPressed();
 };
-
-#endif  // TACTICAL_H

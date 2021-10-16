@@ -1,5 +1,4 @@
-#ifndef TITLEPAGE_H
-#define TITLEPAGE_H
+#pragma once
 
 #include <QObject>
 
@@ -20,5 +19,3 @@ class TitlePage: public QObject
         public slots:
             void onStartButtonPressed();
 };
-
-#endif  // TITLEPAGE_H

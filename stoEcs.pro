@@ -14,6 +14,18 @@ HEADERS += \
 RESOURCES += qml.qrc
 
 
+CONFIG(debug, debug|release) {
+        TARGET = StoEcs
+        OBJECTS_DIR = build/StoEcs/debug
+        MOC_DIR = build/StoEcs/debug
+}
+CONFIG(release, debug|release) {
+        TARGET = StoEcs
+        OBJECTS_DIR = build/StoEcs/release
+        MOC_DIR = build/StoEcs/release
+}
+
+
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
